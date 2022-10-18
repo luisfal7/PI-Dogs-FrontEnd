@@ -14,19 +14,19 @@ export const POST_BREED = 'POST_BREED'
 
 
 export const getDogs = () => (dispatch)=>{
-    return axios('http://pi-dogs-backend-1.herokuapp.com/dogs')
+    return axios('https://pi-dogs-backend-1.herokuapp.com/dogs')
                     .then(res => dispatch({type: 'GET_DOGS', payload: res.data}))
                     .catch((e)=>console.error(e.message))
 }
 
 export const getDog = (id) => (dispatch)=>{
-    return axios(`http://pi-dogs-backend-1.herokuapp.com/dogs/${id}`)
+    return axios(`https://pi-dogs-backend-1.herokuapp.com/dogs/${id}`)
                     .then(res => dispatch({type: 'GET_DOG', payload: res.data}))
                     .catch((e)=>console.error(e.message))
 }
 
 export const getTemperaments = () => (dispatch)=>{
-    return axios('http://pi-dogs-backend-1.herokuapp.com/temperaments')
+    return axios('https://pi-dogs-backend-1.herokuapp.com/temperaments')
         .then(res => dispatch({type: 'GET_TEMPERAMENTS', payload: res.data}))
         .catch((e)=>console.error(e.message))
     
@@ -81,7 +81,7 @@ export function postBreed(breed) {
     return async function (dispatch) {
       try {
         if(breed !== ''){
-            await axios.post("http://pi-dogs-backend-1.herokuapp.com/dogs", breed)
+            await axios.post("https://pi-dogs-backend-1.herokuapp.com/dogs", breed)
         }
       } catch (error) {
         console.log(error);
